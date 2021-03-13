@@ -1,7 +1,8 @@
+//funcao construtora e Classe necessitam do this, enquanto factory não
 function Carro(VelocidadeMaxima = 200, delta = 5) {
-    //atributo privado
+    //atributo privado dentro da funcao
     let VelocidadeAtual = 0;
-
+    //metodos dentro da funcao constutora
     //metodo publico
         this.acelerar = function () {
             if (VelocidadeAtual + delta <= VelocidadeMaxima) {
