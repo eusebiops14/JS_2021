@@ -1,4 +1,4 @@
-const moduloA = require('./126_SistemaModulos_A');
+const moduloA = require('./126_SistemaModulos_A'); //por padrao a extensao do arquivo é js
 const moduloB = require('./126_SistemaModulos_B');
 
 console.log(moduloA.ola);
