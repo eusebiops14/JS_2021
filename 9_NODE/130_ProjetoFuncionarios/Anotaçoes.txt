@@ -1,0 +1,10 @@
+*pwd no terminal : mostra o caminho do arquivo atual
+
+
+
+Comandos usados no terminal para criacao do arquivo package.jason:
+* primeiro acessar a pasta na qual queremos criar o arquivo package.jason (usar cd)
+* digitar: npm init -y
+* npm i --save axios
+*npm i --save-dev axios@0.17.1 -E //Instala um pacote apenas para desenvolvimento na versao exata
+
