@@ -19,8 +19,9 @@ axios.get(url).then(response => {
         .filter(SelecionaChineses)
         .filter(SelecionaMulheres)
         .reduce(SelecionaMenorSalario);
-console.log(func);
-    
+console.log('Resultado:\n',func);
+    //podemos executar esse codigo, acessando o terminal, entrando na pasta 130_ProjetoFuncionarios, digitando: 'nodemon start' --- mas para funcionar
+    //o arquivo package.json deve estar configurado corretamente. ver pasta package.json dentro de 130_ProjetoFuncionarios
     
     
     
