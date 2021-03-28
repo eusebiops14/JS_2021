@@ -1,0 +1,48 @@
+<h1>Formulário</h1>
+
+
+<form action="http://localhost:3003/usuarios" method="POST">
+    Usuario:<input class="entrada" type="text" name="nome">
+    Senha:<input class="entrada" type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="hidden" name ="id" value="3">
+        <input type="radio" name="tipo" value = "Admin">Admin
+        <input type="radio" name="tipo" value= "Regular"> Regular
+        <input type="radio" name="tipo" value = "Professor"> Professor
+    </div>
+
+    <div>
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+
+    <select name="estado">
+        <option value="" >Selecione</option>
+        <option value ="AC">ACRE</option>
+        <option value = "SP">SÃO PAULO</option>
+    </select>
+
+    <select name="interesses" multiple size="3">
+        <option value="js">JavaScript</option>
+        <option value="jv">Java</option>
+        <option value="PHP">PHP</option>
+    </select>
+
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button> <!--Esse 3 é apenas um exemplo de id -Veja linha 9-->
+</form>
+
+<style>
+    input, textarea {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio],
+    input[type=chekbox] {
+        display: inline;
+    }
+
+
+</style>

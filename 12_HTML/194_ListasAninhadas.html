@@ -1,0 +1,54 @@
+<h1>Projeto</h1>
+<ul class = "tree">
+    <li>
+        <span PastaDeArquivos>backend</span>
+        <ul>
+            <li>
+                <span PastaDeArquivos>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+
+            </li>
+            <li>
+                <span PastaDeArquivos>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span PastaDeArquivos>frontend</span>
+      <ul>
+          <li>
+            <span PastaDeArquivos>public</span>
+              <ul>
+                  <li>app.css</li>
+                  <li>app.js</li>
+                  <li>index.html</li>
+
+              </ul>
+          </li>
+      </ul>  
+    </li>
+</ul>
+
+<link rel ="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    
+    //debugger;
+    document.querySelectorAll('[PastaDeArquivos]').forEach(folder => {
+        folder.onclick = function(evento) {
+            const ul = folder.nextElementSibling; //armazena a ul seguinte ao span
+            displayAtual = ul.style.display;//verifica se a pasta esta oculta ou nao
+            ul.style.display = (displayAtual === 'none' ? 'block' : 'none');
+
+        }
+    })
+</script>
