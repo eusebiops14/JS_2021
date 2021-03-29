@@ -5,7 +5,30 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+       body {
+           font-size: 40px;
+           color: #fff;
+           background-color: coral;
+        }
+        ul {padding: 0;}
+        div {
+            background-color: seagreen ;
+        }
+        span{background-color: dodgerblue;}
+        li {background-color: purple;}
+
+        div,span, li {
+            width: 100%;
+            width:200px;
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            display: block; /*Display block faz com que cada elemento tenha uma linha exclusiva */
+            display: inline;/* Com essa propriedade nao são considerados largura e altura e todos os elementos estao na mesma linha*. 
+            Também não é possivel alterar largura. Considera apenas o padding*/
+             display: inline-block /* mesma coisa que o display inline mas considera largura e altura*/
+        }
+
     </style>
 </head>
 

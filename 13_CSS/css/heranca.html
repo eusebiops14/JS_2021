@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -5,12 +6,25 @@
     <meta charset="UTF-8">
     <title>Herança</title>
     <style>
-        /* ... */
+        /* ... Algumas caracteristicas sao herdadas por padrao e outras não 
+        site com varias fontes: google fonts
+        */
+        body{
+            font-family: monospace;
+            font-size: 40px;
+            border: solid 3px red;
+
+        }
+
+        div {
+            border: inherit; /* border nao herdado normalmente mas essa linha força*/
+
+        }
     </style>
 </head>
 
 <body>
-    <h1>Herança</h1>
+    <h1>Herança</h1> <!--As caracteristicas css aplicadas ao body foram herdadas por h1 e div-->
     <div>Estou herdando</div>
 </body>
 
