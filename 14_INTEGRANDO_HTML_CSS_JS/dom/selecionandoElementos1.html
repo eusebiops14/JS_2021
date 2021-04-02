@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        document.getElementById('primeiro').classList.add('destaque'); //selecionando por id
+
+        const divs = document.getElementsByTagName('div'); //selecionando por tag
+        Array.from(divs).forEach(e => e.classList.remove('destaque'));
+    
+        const divsArrays = [...divs];
+        divsArrays.forEach(e => e.classList.add('destaque'));
+
+        const ultimosElementos = document.getElementsByClassName('ultimo'); //selecionando por classe
+        for (let e of ultimosElementos) {
+            e.classList.remove('destaque');
+        }
+
+        //todos retornam html collection que temos que transformar em um array
+    </script>
+</body>
+</html>

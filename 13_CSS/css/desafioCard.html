@@ -5,18 +5,73 @@
     <meta charset="UTF-8">
     <title>Desafio Card</title>
     <style>
-        /* ... */
+        * {
+            box-sizing: border-box;
+        }
+        .painel {
+            display: inline-block;
+            
+            
+        }
+
+        .curso {
+            
+           display: inline-block;
+            vertical-align: top;
+            width: 200px;
+            height: 310px;
+            padding: 5px;
+            border: solid 1px #CCC;
+            box-shadow: 0 4px 20px 0 rgba(0,0,0,0.3);
+        }
+
+        img {
+            height: 50%;
+            width: 100%;
+            
+        }
+
+        .curso-info {
+            padding: 0px;
+            height: 90px;
+            overflow: hidden;
+            margin: 0;
+            
+        }
+
+        .curso-info h4 {
+            margin: 0;
+            font-weight: 100;
+        }
+
+        .curso-preco {
+            float: right;
+            padding: 10px;
+        }
+
+        .preco-de {
+            text-decoration: line-through;
+            color: firebrick;
+            font-size: 1.4em;
+        }
+
+        .preco-por{
+            color: green;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+      
     </style>
 </head>
 
 <body>
     <h1>Card</h1>
 
-    <h2>Objetivo</h2>
-    <img src="http://files.cod3r.com.br/curso-web/card.png" height="340" alt="Objetivo">
-
+    <!--<h2>Objetivo</h2>
+    <img src="http://files.cod3r.com.br/curso-web/card.png" >
+    -->
     <h2>Resultado</h2>
-    <div>
+    <div class="painel">
         <div class="curso">
             <img src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
             <div class="curso-info">
@@ -28,6 +83,7 @@
                 <span class="preco-por">R$50,00</span>
             </div>
         </div>
+
         <div class="curso">
             <img src="http://files.cod3r.com.br/curso-web/curso2.jpg" />
             <div class="curso-info">
