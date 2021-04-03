@@ -23,15 +23,15 @@ document.querySelector('[wm-flappy]').appendChild(b.elemento)
 */
 
 
-
+ 
 
 function ParDeBarreiras(altura,abertura,x) {
     this.elemento = novoElemento('div','par-de-barreiras');
 
-    this.supeior = new Barreira(true);
+    this.superior = new Barreira(true);
     this.inferior = new Barreira(false);
 
-    this.elemento.appendChild(this.supeior.elemento);
+    this.elemento.appendChild(this.superior.elemento);
     this.elemento.appendChild(this.inferior.elemento);
 
     this.sortearAbertura = () => {
@@ -48,7 +48,7 @@ function ParDeBarreiras(altura,abertura,x) {
 
     this.sortearAbertura();
     this.setX(x)
-
+}
 //const b = new ParDeBarreiras (700,200,800);
 //document.querySelector('[wm-flappy]').appendChild(b.elemento);
 
@@ -131,6 +131,32 @@ setInterval(() => {
 },20);
 /*fim da area de teste */
 
+function estaoSobrePostos(elementoA,elementoB) {
+    const a = elementoA.getBoundingClientRect();
+    const b = elementoB.getBoundingClientRect();
+
+    const horizontal = a.left + a.width >= b.left 
+        && b.left + b.width >= a.left;
+
+    const vertical = a.top + a.height >= b.top 
+        && b.top + b.height >=a.top;
+
+    return horizontal && vertical;
+}
+
+function colidiu(passaro,barreiras) {
+    let colidiu = false;
+    barreiras.pares.forEach(ParDeBarreiras => {
+        if (!colidiu) {
+            const superior = ParDeBarreiras.superior.elemento;
+            const inferior = ParDeBarreiras.inferior.elemento;
+            colidiu = estaoSobrePostos(passaro.elemento,superior) 
+                ||  estaoSobrePostos(passaro.elemento,inferior);
+        }
+    })
+    return colidiu;
+}
+
 function FlappyBird() {
     let pontos = 0;
 
@@ -152,6 +178,10 @@ function FlappyBird() {
         const temporizador = setInterval(() => {
             barreiras.animar();
             passaro.animar();
+
+            if (colidiu(passaro,barreiras)) {
+                clearInterval(temporizador);
+            }
         },20);
     }
 
@@ -159,4 +189,3 @@ function FlappyBird() {
 
 new FlappyBird().start();
 
-}
