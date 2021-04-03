@@ -66,3 +66,16 @@
 
 
 }
+
+.gameOver {
+    box-sizing: border-box;
+    position: absolute;
+    padding: 10px;
+    top: 38%;
+    left: 43%;
+    border-style: hidden;
+    font: bold;
+    color: red;
+    font-size: 50px;
+
+}

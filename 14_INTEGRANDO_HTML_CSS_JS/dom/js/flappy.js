@@ -157,6 +157,17 @@ function colidiu(passaro,barreiras) {
     return colidiu;
 }
 
+function Gameover() {
+    this.elemento= novoElemento('div','gameOver');
+    
+    this.ApareceGameOver = () => {
+        this.elemento.innerHTML = 'GAME OVER';
+        this.elemento.style.border = 'solid 5px';
+    }
+}
+
+    
+
 function FlappyBird() {
     let pontos = 0;
 
@@ -168,10 +179,12 @@ function FlappyBird() {
     const barreiras = new Barreiras(altura,largura,200,400,
         () => progresso.atualizarPontos(++pontos));
     const passaro = new Passaro(altura);
-
+    const gameOver = new Gameover();
+        gameOver.elemento.innerHTML.hidden;
     areaDoJogo.appendChild(progresso.elemento);
     areaDoJogo.appendChild(passaro.elemento);
     barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento));
+    areaDoJogo.appendChild(gameOver.elemento);
 
     this.start = () => {
         //loop do jogo
@@ -180,7 +193,10 @@ function FlappyBird() {
             passaro.animar();
 
             if (colidiu(passaro,barreiras)) {
+                gameOver.ApareceGameOver();
                 clearInterval(temporizador);
+                
+
             }
         },20);
     }
